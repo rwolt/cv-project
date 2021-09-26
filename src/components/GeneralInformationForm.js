@@ -3,43 +3,43 @@ import '../styles/GeneralInformation.css';
 
 function GeneralInformationForm(props) {
     return(
-        <form className="person-details">
+        <form className="person-details" name="info">
             <label
                 className="person-name-label"
                 htmlFor="person-name">
                 Name:
-                <input
-                    name="name"
-                    value={props.name}
-                    onChange={props.handleChange}
-                    id="person-name"
-                    type="text"
-                />
             </label>
+            <input
+                type="text"
+                name="personName"
+                className="person-name"
+                value={props.personName}
+                onChange={props.handleChange}
+            />
             <label
                 className="person-email-label"
                 htmlFor="person-email">
                 Email:
-                <input
-                    name="email"
-                    value={props.email}
-                    onChange={props.handleChange}
-                    id="person-email"
-                    type="email"
-                />
             </label>
+            <input
+                type="email"
+                name="email"
+                className="person-email"
+                value={props.email}
+                onChange={props.handleChange}
+            />
             <label
                 className="person-phone-label"
                 htmlFor="person-phone">
                 Phone:
-                <input
-                    name="phone"
-                    value={props.phone}
-                    onChange={props.handleChange}
-                    id="person-phone"
-                    type="phone"
-                />
             </label>
+            <input
+                type="phone"
+                name="phone"
+                className="person-phone"
+                value={props.phone}
+                onChange={props.handleChange}
+            />
         </form>
     )
 }

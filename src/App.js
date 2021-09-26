@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+import uniqid from 'uniqid';
 import './App.css';
-import Info from './components/Info'
+import Info from './components/GeneralInformation';
+import Education from './components/Education';
 
 class App extends Component {
   constructor(props) {
@@ -8,7 +10,7 @@ class App extends Component {
     this.state = {
       info: {
         editable: false,
-        name: '',
+        personName: '',
         phone: '',
         email: ''
       },
@@ -20,6 +22,7 @@ class App extends Component {
         endDate: ''
       },
       career: {
+        id: uniqid(),
         editable: false,
         school: '',
         degree: '',
@@ -33,12 +36,13 @@ class App extends Component {
 
   handleChange = (e) => {
     const {name, value} = e.target;
+    const el = e.target.parentElement.name;
       this.setState(prevState => {
         return({
-            info: {
-            ...prevState.info,
-            [name]: value
-          }
+            [el]: {
+              ...prevState[el],
+              [name]: value
+            }
         })
       })
   }

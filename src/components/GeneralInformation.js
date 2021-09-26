@@ -1,17 +1,24 @@
 import React from 'react';
-import '../styles/GeneralInformation.css';
+import GeneralInformationForm from './GeneralInformationForm';
+import GeneralInformationEntry from './GeneralInformationEntry';
 
-function GeneralInformation(props) {
+
+function Info(props) {
     return(
-        <dl className="person-details">
-            <dt className="person-name-label">Name: </dt>
-                <dd id="person-name">{props.name}</dd>
-            <dt className="person-email-label">Email:</dt>
-                <dd id="person-email">{props.email}</dd>
-            <dt className="person-phone-label">Phone: </dt>
-                <dd id="person-phone">{props.phone}</dd>
-        </dl>
+        <div>
+            <button
+                name="info"
+                onClick={props.handleSubmit}
+                className="edit-button">
+                {props.editable ? 'Submit' : 'Edit'}
+            </button>
+            {props.editable ?
+                <GeneralInformationForm  {...props}/> :
+                <GeneralInformationEntry {...props}/>}
+        </div>
+
     )
 }
 
-export default GeneralInformation;
+
+export default Info;
