@@ -3,6 +3,7 @@ import uniqid from 'uniqid';
 import './App.css';
 import Info from './components/GeneralInformation';
 import Education from './components/Education';
+import Career from './components/Career';
 
 class App extends Component {
   constructor(props) {
@@ -22,10 +23,10 @@ class App extends Component {
         endDate: ''
       },
       career: {
-        id: uniqid(),
         editable: false,
-        school: '',
-        degree: '',
+        company: '',
+        jobTitle: '',
+        description: '',
         startDate: '',
         endDate: '',
       },
@@ -69,6 +70,11 @@ class App extends Component {
         />
         <Education
           {...this.state.education}
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+        />
+        <Career
+          {...this.state.career}
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
         />
