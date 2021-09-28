@@ -8,10 +8,18 @@ function Education(props) {
     return(
         <div>
             <h2>Education History</h2>
-            {props.editable ?
-                <EducationForm {...props} /> :
-                <EducationEntry {...props} />}
-            <button>Add</button>
+            {props.educationHistory.map(entry => {
+                return(
+                    entry.editable ?
+                        <EducationForm {...props} /> :
+                        <EducationEntry {...props} />
+                )
+            })}
+            <button
+                onClick={props.handleAdd}
+                name="education">
+                Add
+            </button>
         </div>
     )
 }

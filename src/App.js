@@ -20,7 +20,8 @@ class App extends Component {
         school: '',
         degree: '',
         startDate: '',
-        endDate: ''
+        endDate: '',
+        id: uniqid()
       },
       career: {
         editable: false,
@@ -29,6 +30,7 @@ class App extends Component {
         description: '',
         startDate: '',
         endDate: '',
+        id: uniqid()
       },
       educationHistory: [],
       careerHistory: []
@@ -60,6 +62,22 @@ class App extends Component {
     })
   }
 
+  handleAdd = (e) => {
+    const {name} = e.target;
+    name === "career" ?
+      this.setState(prevState => {
+        return({
+          careerHistory: prevState.careerHistory.concat(this.state.career)
+        })
+
+      }) :
+      this.setState(prevState => {
+        return({
+          educationHistory: prevState.educationHistory.concat(this.state.education)
+        })
+      })
+  }
+
   render() {
     return (
       <div className="App">
@@ -70,11 +88,15 @@ class App extends Component {
         />
         <Education
           {...this.state.education}
+          educationHistory={this.state.educationHistory}
+          handleAdd={this.handleAdd}
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
         />
         <Career
           {...this.state.career}
+          careerHistory={this.state.careerHistory}
+          handleAdd={this.handleAdd}
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
         />

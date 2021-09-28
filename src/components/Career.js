@@ -7,10 +7,18 @@ function Career(props) {
     return(
         <div>
             <h2>Career</h2>
-            {props.editable ?
-                <CareerForm {...props} /> :
-                <CareerEntry {...props} />}
-            <button>Add</button>
+            {props.careerHistory.map(entry => {
+                return(
+                    entry.editable ?
+                        <CareerForm {...props} /> :
+                        <CareerEntry {...props} />
+                )
+            })}
+            <button
+                onClick={props.handleAdd}
+                name="career">
+                Add
+            </button>
         </div>
     )
 }
