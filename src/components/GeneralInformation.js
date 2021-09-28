@@ -10,7 +10,6 @@ function Info(props) {
             {props.editable ?
                 <GeneralInformationForm  {...props}/> :
                 <GeneralInformationEntry {...props}/>}
-            <button>Add</button>
         </div>
 
     )

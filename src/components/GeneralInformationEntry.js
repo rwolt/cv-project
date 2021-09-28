@@ -4,8 +4,11 @@ import '../styles/GeneralInformation.css';
 function GeneralInformation(props) {
     return(
         <div>
-            <button>Edit</button>
-            <button>Delete</button>
+            <button
+                name="info"
+                onClick={props.handleSubmit}>
+                Edit
+            </button>
             <dl className="person-details" name="info">
                 <dt className="person-name-label">Name: </dt>
                     <dd id="person-name">{props.personName}</dd>

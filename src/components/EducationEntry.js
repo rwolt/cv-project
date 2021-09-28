@@ -3,8 +3,11 @@ import React from 'react';
 function EducationEntry(props) {
     return(
         <div>
-            <button>Edit</button>
-            <button>Delete</button>
+            <button
+                name="education"
+                onClick={props.handleSubmit}>
+                Edit
+            </button>
             <dl className="school-entry" name="education">
                 <dt className="school-name-label">School:</dt>
                     <dd className="school-name">{props.school}</dd>

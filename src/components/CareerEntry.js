@@ -3,8 +3,11 @@ import React from 'react';
 function CareerEntry(props) {
     return(
         <div>
-        <button>Edit</button>
-        <button>Delete</button>
+        <button
+            name="career"
+            onClick={props.handleSubmit}>
+            Edit
+        </button>
             <dl className="career-entry" name="career">
                 <dt className="school-name-label">Company:</dt>
                     <dd className="company-name">{props.company}</dd>
