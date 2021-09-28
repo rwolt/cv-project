@@ -6,15 +6,11 @@ import GeneralInformationEntry from './GeneralInformationEntry';
 function Info(props) {
     return(
         <div>
-            <button
-                name="info"
-                onClick={props.handleSubmit}
-                className="edit-button">
-                {props.editable ? 'Submit' : 'Edit'}
-            </button>
+            <h2>Contact Information</h2>
             {props.editable ?
                 <GeneralInformationForm  {...props}/> :
                 <GeneralInformationEntry {...props}/>}
+            <button>Add</button>
         </div>
 
     )

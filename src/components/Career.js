@@ -1,19 +1,16 @@
 import React from 'react';
 import CareerForm from './CareerForm';
 import CareerEntry from './CareerEntry';
+import '../styles/Career.css';
 
 function Career(props) {
     return(
         <div>
-            <button
-                name="career"
-                onClick={props.handleSubmit}
-                className="edit-button">
-                {props.editable ? 'Submit' : 'Edit'}
-            </button>
+            <h2>Career</h2>
             {props.editable ?
                 <CareerForm {...props} /> :
                 <CareerEntry {...props} />}
+            <button>Add</button>
         </div>
     )
 }
