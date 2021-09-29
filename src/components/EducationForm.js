@@ -5,7 +5,8 @@ function EducationForm(props) {
         <div>
             <button
                 name="education"
-                onClick={props.handleSubmit}>
+                id={props.id}
+                onClick={props.handleEdit}>
                 Save
             </button>
             <form className="school-entry" name="education">
@@ -19,7 +20,7 @@ function EducationForm(props) {
                     name="school"
                     className="school-name"
                     value={props.school}
-                onChange={props.handleChange}
+                    onChange={props.handleChange}
                 />
                 <label
                     className="degree-name-label"

@@ -11,9 +11,15 @@ function Education(props) {
             {props.educationHistory.map(entry => {
                 return(
                     entry.editable ?
-                        <EducationForm {...props} /> :
-                        <EducationEntry {...props} />
-                )
+                        <EducationForm
+                            {...entry}
+                            handleEdit={props.handleSubmit}
+                            key={entry.id}
+                        /> :
+                        <EducationEntry
+                            {...entry}
+                            handleEdit={props.handleSubmit}
+                            key={entry.id} />)
             })}
             <button
                 onClick={props.handleAdd}

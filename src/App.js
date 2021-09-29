@@ -51,31 +51,40 @@ class App extends Component {
   }
 
   handleSubmit = (e) => {
-    const {name} = e.target;
-    this.setState(prevState => {
-      return({
-        [name]: {
-          ...prevState[name],
-          editable: !prevState[name].editable
-        }
-      })
-    })
+    const {name, id} = e.target;
+    const {educationHistory} = this.state;
+    this.setState({
+          educationHistory: educationHistory.map(entry => entry.id === id ? {...entry, editable: !entry.editable} : entry)
+        })
   }
 
   handleAdd = (e) => {
     const {name} = e.target;
+    const {career, careerHistory, education, educationHistory} = this.state;
     name === "career" ?
-      this.setState(prevState => {
-        return({
-          careerHistory: prevState.careerHistory.concat(this.state.career)
+      this.setState({
+          careerHistory: careerHistory.concat(career),
+          career: {
+            editable: false,
+            company: '',
+            jobTitle: '',
+            description: '',
+            startDate: '',
+            endDate: '',
+            id: uniqid()
+          }
+        }) :
+      this.setState({
+          educationHistory: educationHistory.concat(education),
+          education: {
+            editable: false,
+            school: '',
+            degree: '',
+            startDate: '',
+            endDate: '',
+            id: uniqid()
+          }
         })
-
-      }) :
-      this.setState(prevState => {
-        return({
-          educationHistory: prevState.educationHistory.concat(this.state.education)
-        })
-      })
   }
 
   render() {

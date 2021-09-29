@@ -5,7 +5,8 @@ function EducationEntry(props) {
         <div>
             <button
                 name="education"
-                onClick={props.handleSubmit}>
+                id={props.id}
+                onClick={props.handleEdit}>
                 Edit
             </button>
             <dl className="school-entry" name="education">
