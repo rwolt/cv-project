@@ -10,8 +10,18 @@ function Career(props) {
             {props.careerHistory.map(entry => {
                 return(
                     entry.editable ?
-                        <CareerForm {...props} /> :
-                        <CareerEntry {...props} />
+                        <CareerForm
+                            {...entry}
+                            handleChange={props.handleChange}
+                            handleEdit={props.handleSubmit}
+                            key={entry.id}
+                        /> :
+                        <CareerEntry
+                            {...entry}
+                            handleChange={props.handleChange}
+                            handleEdit={props.handleSubmit}
+                            key={entry.id}
+                        />
                 )
             })}
             <button

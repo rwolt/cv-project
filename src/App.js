@@ -10,13 +10,13 @@ class App extends Component {
     super(props);
     this.state = {
       info: {
-        editable: false,
+        editable: true,
         personName: '',
         phone: '',
         email: ''
       },
       education: {
-        editable: false,
+        editable: true,
         school: '',
         degree: '',
         startDate: '',
@@ -24,7 +24,7 @@ class App extends Component {
         id: uniqid()
       },
       career: {
-        editable: false,
+        editable: true,
         company: '',
         jobTitle: '',
         description: '',
@@ -38,24 +38,54 @@ class App extends Component {
   }
 
   handleChange = (e) => {
-    const {name, value} = e.target;
-    const el = e.target.parentElement.name;
+    const {name, value, id} = e.target;
+    const elName = e.target.parentElement.name;
+    let entries;
+    if (elName === 'info') {
       this.setState(prevState => {
         return({
-            [el]: {
-              ...prevState[el],
+            [elName]: {
+              ...prevState[elName],
               [name]: value
             }
         })
       })
+    } else {
+      if (elName === 'education') {
+        entries = 'educationHistory'
+      } else {
+        entries = 'careerHistory'
+      }
+      this.setState({
+        [entries]: this.state[entries].map(entry => {
+          return(
+            entry.id === id ? {...entry, [name]: value} : entry
+          )
+        })
+      })
+    }
   }
 
   handleSubmit = (e) => {
     const {name, id} = e.target;
-    const {educationHistory} = this.state;
-    this.setState({
-          educationHistory: educationHistory.map(entry => entry.id === id ? {...entry, editable: !entry.editable} : entry)
+    if(name === 'info'){
+      this.setState({
+        [name]: {
+          ...this.state[name],
+          editable: !this.state[name].editable
+        }
+      })
+    } else {
+      this.setState(prevState => {
+        return({
+          [name]: this.state[name].map(entry => {
+            return(
+              entry.id === id ? {...entry, editable: !entry.editable} : entry
+            )
+          })
         })
+      })
+    }
   }
 
   handleAdd = (e) => {
@@ -65,7 +95,7 @@ class App extends Component {
       this.setState({
           careerHistory: careerHistory.concat(career),
           career: {
-            editable: false,
+            editable: true,
             company: '',
             jobTitle: '',
             description: '',
@@ -77,7 +107,7 @@ class App extends Component {
       this.setState({
           educationHistory: educationHistory.concat(education),
           education: {
-            editable: false,
+            editable: true,
             school: '',
             degree: '',
             startDate: '',

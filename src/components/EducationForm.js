@@ -4,7 +4,7 @@ function EducationForm(props) {
     return(
         <div>
             <button
-                name="education"
+                name="educationHistory"
                 id={props.id}
                 onClick={props.handleEdit}>
                 Save
@@ -19,6 +19,7 @@ function EducationForm(props) {
                     type="text"
                     name="school"
                     className="school-name"
+                    id={props.id}
                     value={props.school}
                     onChange={props.handleChange}
                 />
@@ -31,6 +32,7 @@ function EducationForm(props) {
                     type="text"
                     name="degree"
                     className="degree-name"
+                    id={props.id}
                     value={props.degree}
                     onChange={props.handleChange}
                 />
@@ -43,6 +45,7 @@ function EducationForm(props) {
                     type="date"
                     name="startDate"
                     className="school-start"
+                    id={props.id}
                     value={props.startDate}
                     onChange={props.handleChange}
                 />
@@ -55,6 +58,7 @@ function EducationForm(props) {
                     type="date"
                     name="endDate"
                     className="school-end"
+                    id={props.id}
                     value={props.endDate}
                     onChange={props.handleChange}
                 />

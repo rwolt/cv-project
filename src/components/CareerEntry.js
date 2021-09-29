@@ -4,8 +4,9 @@ function CareerEntry(props) {
     return(
         <div>
         <button
-            name="career"
-            onClick={props.handleSubmit}>
+            name="careerHistory"
+            id={props.id}
+            onClick={props.handleEdit}>
             Edit
         </button>
             <dl className="career-entry" name="career">
@@ -21,7 +22,6 @@ function CareerEntry(props) {
                     <dd className="job-description">{props.description}</dd>
             </dl>
         </div>
-
     )
 }
 

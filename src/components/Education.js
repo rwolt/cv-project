@@ -14,11 +14,13 @@ function Education(props) {
                         <EducationForm
                             {...entry}
                             handleEdit={props.handleSubmit}
+                            handleChange={props.handleChange}
                             key={entry.id}
                         /> :
                         <EducationEntry
                             {...entry}
                             handleEdit={props.handleSubmit}
+                            handleChange={props.handleChange}
                             key={entry.id} />)
             })}
             <button

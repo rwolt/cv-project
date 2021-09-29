@@ -4,8 +4,9 @@ function CareerForm(props) {
     return(
         <div>
             <button
-                name="career"
-                onClick={props.handleSubmit}>
+                name="careerHistory"
+                id={props.id}
+                onClick={props.handleEdit}>
                 Save
             </button>
             <form className="career-entry" name="career">
@@ -18,6 +19,7 @@ function CareerForm(props) {
                     type="text"
                     name="company"
                     value={props.company}
+                    id={props.id}
                     onChange={props.handleChange}
                 />
                 <label
@@ -29,6 +31,7 @@ function CareerForm(props) {
                     type="text"
                     name="jobTitle"
                     value={props.jobTitle}
+                    id={props.id}
                     onChange={props.handleChange}
                 />
                 <label
@@ -41,6 +44,7 @@ function CareerForm(props) {
                     className="job-start"
                     name="startDate"
                     value={props.startDate}
+                    id={props.id}
                     onChange={props.handleChange}
                 />
                 <label
@@ -53,6 +57,7 @@ function CareerForm(props) {
                     className="job-end"
                     name="endDate"
                     value={props.endDate}
+                    id={props.id}
                     onChange={props.handleChange}
                 />
                 <label
@@ -65,6 +70,7 @@ function CareerForm(props) {
                     className="job-description"
                     name="description"
                     value={props.description}
+                    id={props.id}
                     onChange={props.handleChange}
                 />
             </form>

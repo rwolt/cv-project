@@ -4,7 +4,7 @@ function EducationEntry(props) {
     return(
         <div>
             <button
-                name="education"
+                name="educationHistory"
                 id={props.id}
                 onClick={props.handleEdit}>
                 Edit
