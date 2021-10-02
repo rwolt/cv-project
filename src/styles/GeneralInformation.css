@@ -2,3 +2,22 @@
     width: 190px;
 }
 
+.person-details {
+    width: 320px;
+}
+
+.person-entry {
+    width: 320px;
+}
+
+.person-entry>.form-row, .person-entry>.entry-row {
+    width: 320px;
+}
+
+.information-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0px;
+    position: relative;
+}

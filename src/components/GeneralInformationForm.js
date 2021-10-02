@@ -52,9 +52,6 @@ function GeneralInformationForm(props) {
                         onChange={props.handleChange}
                     />
                 </div>
-
-
-
             </form>
         </div>
     )
