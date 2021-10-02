@@ -39,7 +39,7 @@ class App extends Component {
 
   handleChange = (e) => {
     const {name, value, id} = e.target;
-    const elName = e.target.parentElement.name;
+    const elName = e.target.parentElement.parentElement.name;
     let entries;
     if (elName === 'info') {
       this.setState(prevState => {

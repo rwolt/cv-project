@@ -1,5 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans&display=swap');
+
 .App {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    width: 500px;
+}
+
+label, .label {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.form-row, .entry-row {
+    width: 400px;
     display: flex;
-    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
 }

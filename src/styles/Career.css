@@ -1,9 +1,1 @@
-.career-entry {
-    display: flex;
-    flex-direction: column;
-    width: 240px;
-}
 
-.company-name, .job-title, .career-start, .career-end, .job-description {
-    width: 240px;
-}

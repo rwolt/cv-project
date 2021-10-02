@@ -1,9 +1,0 @@
-.school-entry {
-    display: flex;
-    flex-direction: column;
-    width: 240px;
-}
-
-.school-name, .degree-name, .school-start, .school-end {
-    width: 240px;
-}

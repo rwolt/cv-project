@@ -7,7 +7,7 @@ function Education(props) {
 
     return(
         <div>
-            <h2>Education History</h2>
+            <h2>Education</h2>
             {props.educationHistory.map(entry => {
                 return(
                     entry.editable ?

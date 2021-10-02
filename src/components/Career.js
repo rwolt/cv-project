@@ -6,7 +6,7 @@ import '../styles/Career.css';
 function Career(props) {
     return(
         <div>
-            <h2>Career</h2>
+            <h2>Experience</h2>
             {props.careerHistory.map(entry => {
                 return(
                     entry.editable ?

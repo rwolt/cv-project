@@ -9,18 +9,23 @@ function EducationEntry(props) {
                 onClick={props.handleEdit}>
                 Edit
             </button>
-            <dl className="school-entry" name="education">
-                <dt className="school-name-label">School:</dt>
-                    <dd className="school-name">{props.school}</dd>
-                <dt className="degree-name-label">Degree:</dt>
-                    <dd className="degree-name">{props.degree}</dd>
-                <dt className="school-start-label">Start Date:</dt>
-                    <dd className="school-start">{props.startDate}</dd>
-                <dt className="school-end-label">End Date:</dt>
-                    <dd className="school-end">{props.endDate}</dd>
-            </dl>
+            <div className="entry-row">
+                <span className="label school-name-label">School:</span>
+                <span className="entry school-name">{props.school}</span>
+            </div>
+            <div className="entry-row">
+                <span className="label degree-name-label">Degree:</span>
+                <span className="entry degree-name">{props.degree}</span>
+            </div>
+            <div className="entry-row">
+                <span className="label school-start-label">Start Date:</span>
+                <span className="entry school-start">{props.startDate}</span>
+            </div>
+            <div className="entry-row">
+                <span className="label school-end-label">End Date:</span>
+                <span className="entry school-end">{props.enspanate}</span>
+            </div>
         </div>
-
     )
 }
 

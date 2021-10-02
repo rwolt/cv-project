@@ -1,9 +1,2 @@
-.person-details {
-    display: flex;
-    flex-direction: column;
-    width: 240px;
-}
 
-.person-name, .person-email, .person-phone {
-    width: 240px;
-}
+

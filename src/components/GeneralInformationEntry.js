@@ -3,20 +3,26 @@ import '../styles/GeneralInformation.css';
 
 function GeneralInformation(props) {
     return(
-        <div>
+        <div className="person-details">
             <button
                 name="info"
                 onClick={props.handleSubmit}>
                 Edit
             </button>
-            <dl className="person-details" name="info">
-                <dt className="person-name-label">Name: </dt>
-                    <dd id="person-name">{props.personName}</dd>
-                <dt className="person-email-label">Email:</dt>
-                    <dd id="person-email">{props.email}</dd>
-                <dt className="person-phone-label">Phone: </dt>
-                    <dd id="person-phone">{props.phone}</dd>
-            </dl>
+            <div className="person-entry" name="info">
+                    <div className="entry-row">
+                        <span className="label person-name-label">Name:</span>
+                        <span className="entry person-name">{props.personName}</span>
+                    </div>
+                    <div className="entry-row">
+                        <span className="label person-email-label">Email:</span>
+                        <span className="entry person-email">{props.email}</span>
+                    </div>
+                    <div className="entry-row">
+                        <span className="label person-phone-label">Phone: </span>
+                        <span className="entry person-phone">{props.phone}</span>
+                    </div>
+            </div>
         </div>
 
     )
