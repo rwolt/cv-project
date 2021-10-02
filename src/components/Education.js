@@ -28,7 +28,7 @@ function Education(props) {
             <button
                 onClick={props.handleAdd}
                 name="education">
-                Add
+                Add Education
             </button>
         </div>
     )

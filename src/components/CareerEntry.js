@@ -2,7 +2,7 @@ import React from 'react';
 
 function CareerEntry(props) {
     return(
-        <div>
+        <div className="career-entry">
         <button
             name="careerHistory"
             id={props.id}
@@ -26,10 +26,8 @@ function CareerEntry(props) {
             <div className="entry-row">
                 <span className="label job-start-label">Start Date:</span>
                 <span className="entry school-start">{props.startDate}</span>
-            </div>
-            <div className="entry-row">
                 <span className="label job-end-label">End Date:</span>
-                <span className="entry job-end">{props.enspanate}</span>
+                <span className="entry job-end">{props.endDate}</span>
             </div>
             <div className="entry-row">
                 <span className="label job-description-label">Description:</span>

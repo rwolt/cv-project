@@ -23,6 +23,7 @@ function CareerForm(props) {
                     Company:
                     </label>
                     <input
+                        className="company-name"
                         type="text"
                         name="company"
                         value={props.company}
@@ -32,12 +33,13 @@ function CareerForm(props) {
                 </div>
                 <div className="form-row">
                     <label
-                        className="job-title-lable"
+                        className="job-title-label"
                         htmlFor="job-title">
                     Job Title:
                     </label>
                     <input
                         type="text"
+                        className="job-title"
                         name="jobTitle"
                         value={props.jobTitle}
                         id={props.id}
@@ -58,9 +60,7 @@ function CareerForm(props) {
                         id={props.id}
                         onChange={props.handleChange}
                     />
-                </div>
-                <div className="form-row">
-                    <label
+                      <label
                         className="job-end-label"
                         htmlFor="job-end">
                     End Date:
@@ -80,14 +80,13 @@ function CareerForm(props) {
                         htmlFor="job-description">
                     Description:
                     </label>
-                    <input
-                        type="text"
+                    <textarea
                         className="job-description"
                         name="description"
                         value={props.description}
                         id={props.id}
                         onChange={props.handleChange}
-                    />
+                    ></textarea>
                 </div>
             </form>
         </div>

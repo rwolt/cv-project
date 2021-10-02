@@ -1,0 +1,17 @@
+.school-name, .degree-name {
+    width: 300px;
+}
+
+.school-start, .school-end {
+    width: 190px;
+}
+
+.school-start-label {
+    width: 130px;
+}
+
+.school-end-label {
+    width: 120px;
+    padding-left: 20px;
+    margin-right: 20px;
+}

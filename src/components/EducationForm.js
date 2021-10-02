@@ -60,8 +60,6 @@ function EducationForm(props) {
                         value={props.startDate}
                         onChange={props.handleChange}
                     />
-                </div>
-                <div className="form-row">
                     <label
                         htmlFor="school-end"
                         className="school-end-label">

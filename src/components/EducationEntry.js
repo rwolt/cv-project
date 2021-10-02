@@ -26,10 +26,8 @@ function EducationEntry(props) {
             <div className="entry-row">
                 <span className="label school-start-label">Start Date:</span>
                 <span className="entry school-start">{props.startDate}</span>
-            </div>
-            <div className="entry-row">
                 <span className="label school-end-label">End Date:</span>
-                <span className="entry school-end">{props.enspanate}</span>
+                <span className="entry school-end">{props.endDate}</span>
             </div>
         </div>
     )

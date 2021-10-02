@@ -1,1 +1,25 @@
+.company-name, .job-title {
+    width: 300px;
+}
 
+.job-description {
+    width: 540px;
+}
+
+.job-start, .job-end {
+    width: 190px;
+}
+
+.career-entry>:last-child {
+    align-items: flex-start ;
+}
+
+.job-start-label {
+    width: 130px;
+}
+
+.job-end-label {
+    width: 120px;
+    padding-left: 20px;
+    margin-right: 20px;
+}
