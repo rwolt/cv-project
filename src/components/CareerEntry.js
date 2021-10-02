@@ -9,6 +9,12 @@ function CareerEntry(props) {
             onClick={props.handleEdit}>
             Edit
         </button>
+        <button
+                name="careerHistory"
+                id={props.id}
+                onClick={props.handleDelete}>
+                Delete
+            </button>
             <div className="entry-row">
                 <span className="label school-name-label">Company:</span>
                 <span className="entry company-name">{props.company}</span>

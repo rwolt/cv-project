@@ -117,6 +117,18 @@ class App extends Component {
         })
   }
 
+  handleDelete = (e) => {
+    const {name, id} = e.target;
+    const {educationHistory, careerHistory} = this.state;
+      name === 'educationHistory' ?
+      this.setState({
+        educationHistory: educationHistory.filter(entry => entry.id !== id)
+      }) :
+      this.setState({
+        careerHistory: careerHistory.filter(entry => entry.id !== id)
+      })
+  }
+
   render() {
     return (
       <div className="App">
@@ -129,6 +141,7 @@ class App extends Component {
           {...this.state.education}
           educationHistory={this.state.educationHistory}
           handleAdd={this.handleAdd}
+          handleDelete={this.handleDelete}
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
         />
@@ -136,6 +149,7 @@ class App extends Component {
           {...this.state.career}
           careerHistory={this.state.careerHistory}
           handleAdd={this.handleAdd}
+          handleDelete={this.handleDelete}
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
         />

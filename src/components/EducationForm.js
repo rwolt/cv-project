@@ -9,6 +9,12 @@ function EducationForm(props) {
                 onClick={props.handleEdit}>
                 Save
             </button>
+            <button
+                name="educationHistory"
+                id={props.id}
+                onClick={props.handleDelete}>
+                Delete
+            </button>
             <form className="school-entry" name="education">
                 <div className="form-row">
                     <label

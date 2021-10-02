@@ -5,7 +5,7 @@ import GeneralInformationEntry from './GeneralInformationEntry';
 
 function Info(props) {
     return(
-        <div>
+        <div className="container information-container">
             <h2>Contact Information</h2>
             {props.editable ?
                 <GeneralInformationForm  {...props}/> :

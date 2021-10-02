@@ -9,6 +9,12 @@ function CareerForm(props) {
                 onClick={props.handleEdit}>
                 Save
             </button>
+            <button
+                name="careerHistory"
+                id={props.id}
+                onClick={props.handleDelete}>
+                Delete
+            </button>
             <form className="career-entry" name="career">
                 <div className="form-row">
                     <label

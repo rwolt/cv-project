@@ -6,7 +6,7 @@ import '../styles/Education.css';
 function Education(props) {
 
     return(
-        <div>
+        <div className="container education-container">
             <h2>Education</h2>
             {props.educationHistory.map(entry => {
                 return(
@@ -15,12 +15,14 @@ function Education(props) {
                             {...entry}
                             handleEdit={props.handleSubmit}
                             handleChange={props.handleChange}
+                            handleDelete={props.handleDelete}
                             key={entry.id}
                         /> :
                         <EducationEntry
                             {...entry}
                             handleEdit={props.handleSubmit}
                             handleChange={props.handleChange}
+                            handleDelete={props.handleDelete}
                             key={entry.id} />)
             })}
             <button

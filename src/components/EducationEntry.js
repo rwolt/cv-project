@@ -9,6 +9,12 @@ function EducationEntry(props) {
                 onClick={props.handleEdit}>
                 Edit
             </button>
+            <button
+                name="educationHistory"
+                id={props.id}
+                onClick={props.handleDelete}>
+                Delete
+            </button>
             <div className="entry-row">
                 <span className="label school-name-label">School:</span>
                 <span className="entry school-name">{props.school}</span>

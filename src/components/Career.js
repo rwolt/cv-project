@@ -5,7 +5,7 @@ import '../styles/Career.css';
 
 function Career(props) {
     return(
-        <div>
+        <div className="container career-container">
             <h2>Experience</h2>
             {props.careerHistory.map(entry => {
                 return(
@@ -14,12 +14,14 @@ function Career(props) {
                             {...entry}
                             handleChange={props.handleChange}
                             handleEdit={props.handleSubmit}
+                            handleDelete={props.handleDelete}
                             key={entry.id}
                         /> :
                         <CareerEntry
                             {...entry}
                             handleChange={props.handleChange}
                             handleEdit={props.handleSubmit}
+                            handleDelete={props.handleDelete}
                             key={entry.id}
                         />
                 )
