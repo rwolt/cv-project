@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import uniqid from 'uniqid';
 import './App.css';
+import Header from './components/Header';
 import Info from './components/GeneralInformation';
 import Education from './components/Education';
 import Career from './components/Career';
@@ -132,27 +133,30 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Info
-          {...this.state.info}
-          handleSubmit={this.handleSubmit}
-          handleChange={this.handleChange}
-        />
-        <Education
-          {...this.state.education}
-          educationHistory={this.state.educationHistory}
-          handleAdd={this.handleAdd}
-          handleDelete={this.handleDelete}
-          handleSubmit={this.handleSubmit}
-          handleChange={this.handleChange}
-        />
-        <Career
-          {...this.state.career}
-          careerHistory={this.state.careerHistory}
-          handleAdd={this.handleAdd}
-          handleDelete={this.handleDelete}
-          handleSubmit={this.handleSubmit}
-          handleChange={this.handleChange}
-        />
+          <Header />
+          <div className="main">
+          <Info
+            {...this.state.info}
+            handleSubmit={this.handleSubmit}
+            handleChange={this.handleChange}
+          />
+          <Education
+            {...this.state.education}
+            educationHistory={this.state.educationHistory}
+            handleAdd={this.handleAdd}
+            handleDelete={this.handleDelete}
+            handleSubmit={this.handleSubmit}
+            handleChange={this.handleChange}
+          />
+          <Career
+            {...this.state.career}
+            careerHistory={this.state.careerHistory}
+            handleAdd={this.handleAdd}
+            handleDelete={this.handleDelete}
+            handleSubmit={this.handleSubmit}
+            handleChange={this.handleChange}
+          />
+        </div>
       </div>
     );
   }
