@@ -3,18 +3,23 @@ import React from 'react';
 function CareerForm(props) {
     return(
         <div>
-            <button
-                name="careerHistory"
-                id={props.id}
-                onClick={props.handleEdit}>
-                Save
-            </button>
-            <button
-                name="careerHistory"
-                id={props.id}
-                onClick={props.handleDelete}>
-                Delete
-            </button>
+            <div className="control-buttons">
+                <button
+                    className="hidden edit-button"
+                    name="careerHistory"
+                    id={props.id}
+                    onClick={props.handleEdit}>
+                    Save
+                </button>
+                <button
+                    className="hidden delete-button"
+                    name="careerHistory"
+                    id={props.id}
+                    onClick={props.handleDelete}>
+                    Delete
+                </button>
+            </div>
+
             <form className="career-entry" name="career">
                 <div className="form-row">
                     <label

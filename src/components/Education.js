@@ -26,6 +26,7 @@ function Education(props) {
                             key={entry.id} />)
             })}
             <button
+                className='add-button'
                 onClick={props.handleAdd}
                 name="education">
                 Add Education

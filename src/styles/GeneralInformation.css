@@ -1,17 +1,21 @@
-.person-name, .person-email, .person-phone {
+.person-name, .person-email {
+    width: 300px;
+}
+
+.person-phone {
     width: 190px;
 }
 
 .person-details {
-    width: 320px;
+    width: 430px;
 }
 
 .person-entry {
-    width: 320px;
+    width: 430px;
 }
 
 .person-entry>.form-row, .person-entry>.entry-row {
-    width: 320px;
+    width: 430px;
 }
 
 .information-container {

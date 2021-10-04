@@ -1,20 +1,25 @@
 import React from 'react';
+import editImg from '../images/draw.png'
 
 function EducationForm(props) {
     return(
         <div>
-            <button
-                name="educationHistory"
-                id={props.id}
-                onClick={props.handleEdit}>
-                Save
-            </button>
-            <button
-                name="educationHistory"
-                id={props.id}
-                onClick={props.handleDelete}>
-                Delete
-            </button>
+            <div className="control-buttons">
+                <button
+                    className="hidden edit-button"
+                    name="educationHistory"
+                    id={props.id}
+                    onClick={props.handleEdit}>
+                    Save
+                </button>
+                <button
+                    className="hidden delete-button"
+                    name="educationHistory"
+                    id={props.id}
+                    onClick={props.handleDelete}>
+                    Delete
+                </button>
+            </div>
             <form className="school-entry" name="education">
                 <div className="form-row">
                     <label

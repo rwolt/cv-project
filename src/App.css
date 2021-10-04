@@ -68,3 +68,37 @@ input:focus, textarea:focus {
 .container:last-child {
     border-bottom: none;
 }
+
+.control-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.edit-button, .delete-button, .save-button {
+    height: 40px;
+    width: 40px;
+    border: none;
+    text-indent: -9999px;
+    margin: 0px 3px;
+}
+
+.edit-button:hover , .delete-button:hover, .save-button:hover {
+    cursor: pointer;
+}
+
+.edit-button {
+  background: url('./images/draw.png') no-repeat center;
+  background-size: 30px;
+}
+
+.save-button {
+    background: url('./images/save.png') no-repeat center;
+    background-size: 30px;
+}
+
+
+.delete-button {
+    background: url('./images/delete.png') no-repeat center;
+    background-size: 30px;
+}
+
