@@ -6,7 +6,7 @@ import '../styles/Education.css';
 function Education(props) {
 
     return(
-        <div className="container education-container">
+        <div className="section">
             <h2>Education</h2>
             {props.educationHistory.map(entry => {
                 return(

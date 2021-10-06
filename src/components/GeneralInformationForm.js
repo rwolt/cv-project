@@ -5,6 +5,7 @@ function GeneralInformationForm(props) {
     return(
         <div className="person-details">
             <button
+                className="info-button"
                 name="info"
                 onClick={props.handleSubmit}>
                 Save

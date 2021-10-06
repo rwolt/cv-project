@@ -6,8 +6,9 @@ import ProfilePicture from './ProfilePicture';
 
 function Info(props) {
     return(
-        <div className="container">
+        <div className="section">
              <h2>Contact Information</h2>
+    
             <div className="container information-container">
                 {props.editable ?
                     <GeneralInformationForm  {...props}/> :

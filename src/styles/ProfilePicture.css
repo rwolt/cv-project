@@ -1,5 +1,25 @@
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .profile-picture {
     height: 140px;
+}
+
+.profile-container:hover>.profile-picture{
+    filter: brightness(30%);
+    cursor: pointer;
+}
+
+.profile-text {
+    color: white;
     position: relative;
-    right: 50%;
+    visibility: hidden;
+    left: -50%;
+}
+
+.profile-text:hover {
+    cursor: pointer;
 }

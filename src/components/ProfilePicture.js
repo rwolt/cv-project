@@ -6,6 +6,7 @@ function ProfilePicture() {
     return(
         <div className="profile-container">
             <img className='profile-picture' src={defaultProfilePicture} alt="Default Profile" />
+            <p className="profile-text">Edit</p>
         </div>
     )
 }

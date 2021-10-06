@@ -5,7 +5,7 @@ import '../styles/Career.css';
 
 function Career(props) {
     return(
-        <div className="container career-container">
+        <div className="section">
             <h2>Experience</h2>
             {props.careerHistory.map(entry => {
                 return(
@@ -27,6 +27,7 @@ function Career(props) {
                 )
             })}
             <button
+                className='add-button'
                 onClick={props.handleAdd}
                 name="career">
                 Add Experience

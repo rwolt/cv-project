@@ -52,6 +52,21 @@ input:focus, textarea:focus {
     outline: 2px solid rgb(58, 171, 241);
 }
 
+.container {
+    position: relative;
+}
+
+.control-buttons {
+    visibility: hidden;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.container:hover>.control-buttons {
+    visibility: visible;
+}
+
 .form-row, .entry-row {
     width: 700px;
     display: flex;
@@ -60,13 +75,17 @@ input:focus, textarea:focus {
     margin: 5px 0px;
 }
 
-.container {
+.section {
     border-bottom: 1px solid #555;
     padding-bottom: 15px;
 }
 
-.container:last-child {
+.section:last-child {
     border-bottom: none;
+}
+
+.container {
+    padding: 15px;
 }
 
 .control-buttons {
@@ -102,3 +121,20 @@ input:focus, textarea:focus {
     background-size: 30px;
 }
 
+.add-button, .info-button {
+    background-color: rgb(255, 110, 58);
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    font-size: 18px;
+    color: white;
+}
+
+.add-button:hover, .info-button:hover {
+    background-color: rgb(255, 156, 119);
+    cursor: pointer;
+}
+
+.profile-container:hover>.profile-text {
+    visibility: visible;
+}

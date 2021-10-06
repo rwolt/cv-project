@@ -1,18 +1,23 @@
 import React from 'react';
 
 function CareerForm(props) {
+    const style = {
+        background: `url('${process.env.PUBLIC_URL}/floppy.png') no-repeat center`,
+        backgroundSize: '30px'
+    }
     return(
-        <div>
-            <div className="control-buttons">
+        <div className="container">
+            <div className="hidden control-buttons">
                 <button
-                    className="hidden edit-button"
+                    className="edit-button"
                     name="careerHistory"
                     id={props.id}
-                    onClick={props.handleEdit}>
+                    onClick={props.handleEdit}
+                    style={style}>
                     Save
                 </button>
                 <button
-                    className="hidden delete-button"
+                    className="delete-button"
                     name="careerHistory"
                     id={props.id}
                     onClick={props.handleDelete}>
