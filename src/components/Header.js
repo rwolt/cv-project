@@ -4,9 +4,11 @@ import '../styles/Header.css'
 
 function Header() {
     return(
-        <div className="header">
-            <img className="logo" src={logo} alt="Logo" />
-            <h1 className="title">Resume Creator</h1>
+        <div className="header-container">
+            <div className="header">
+                <img className="logo" src={logo} alt="Logo" />
+                <h1 className="title">Resume Creator</h1>
+            </div>
         </div>
     )
 }

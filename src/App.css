@@ -13,6 +13,11 @@
     width: 700px;
 }
 
+h2 {
+    padding: 15px 0px 5px 0px;
+    margin: 0px;
+}
+
 label, .label {
     display: inline-block;
     width: 130px;
@@ -119,6 +124,15 @@ input:focus, textarea:focus {
 .delete-button {
     background: url('./images/delete.png') no-repeat center;
     background-size: 30px;
+}
+
+.add-button {
+    margin: 15px 0px;
+}
+
+.info-button {
+    position: relative;
+    left: -15px;
 }
 
 .add-button, .info-button {
