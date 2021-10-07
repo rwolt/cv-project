@@ -23,7 +23,6 @@
     color: white;
     position: absolute;
     visibility: hidden;
-    top: 50%;
 }
 
 .profile-text:hover {
