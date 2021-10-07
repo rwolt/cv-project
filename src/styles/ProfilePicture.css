@@ -6,6 +6,7 @@
 
 .profile-picture {
     height: 140px;
+    border-radius: 5px;
 }
 
 .profile-container:hover>.profile-picture{
@@ -22,4 +23,8 @@
 
 .profile-text:hover {
     cursor: pointer;
+}
+
+#image-upload {
+    display: none;
 }
