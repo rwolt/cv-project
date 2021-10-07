@@ -1,6 +1,6 @@
 # Resume Creator using ReactJS
 
-A simple form that allows users to quickly enter their details. 
+A simple form that allows users to quickly enter their resume details. 
 
 ## Skills Demonstrated
 
