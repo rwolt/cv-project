@@ -18,13 +18,14 @@ class ProfilePicture extends Component {
 
     render() {
         return(
-            <div className="profile-container">
+            <div
+                className="profile-container"
+                onClick={() => document.getElementById('image-upload').click()}>
                 <input type='file'
                     id="image-upload"
                     onChange={this.handleChange}
                 />
                 <img className="profile-picture"
-                    onClick={() => document.getElementById('image-upload').click()}
                     src={defaultProfilePicture} alt="Default Profile"
                 />
                 <p className="profile-text">Edit</p>
