@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import uniqid from 'uniqid';
 import './App.css';
 import Header from './components/Header';
@@ -6,25 +6,22 @@ import Info from './components/GeneralInformation';
 import Education from './components/Education';
 import Career from './components/Career';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      info: {
-        editable: true,
-        personName: '',
-        phone: '',
-        email: ''
-      },
-      education: {
-        editable: true,
-        school: '',
-        degree: '',
-        startDate: '',
-        endDate: '',
-        id: uniqid()
-      },
-      career: {
+function App () {
+    const [info, setInfo] = useState ({
+            editable: true,
+            personName: '',
+            phone: '',
+            email: ''
+    });
+    const [education, setEducation] = useState ({
+          editable: true,
+          school: '',
+          degree: '',
+          startDate: '',
+          endDate: '',
+          id: uniqid()
+    });
+    const [career, setCareer] = useState({
         editable: true,
         company: '',
         jobTitle: '',
@@ -32,134 +29,117 @@ class App extends Component {
         startDate: '',
         endDate: '',
         id: uniqid()
-      },
-      educationHistory: [],
-      careerHistory: []
-    }
-  }
+    })
+    const [educationHistory, setEducationHistory] = useState([]);
+    const [careerHistory, setCareerHistory] = useState([]);
 
-  handleChange = (e) => {
+ const handleChange = (e) => {
     const {name, value, id} = e.target;
     const elName = e.target.parentElement.parentElement.name;
-    let entries;
+    let entries, setter;
     if (elName === 'info') {
-      this.setState(prevState => {
-        return({
-            [elName]: {
-              ...prevState[elName],
-              [name]: value
-            }
-        })
+      setInfo({
+        ...info,
+        [name]: value
       })
     } else {
       if (elName === 'education') {
-        entries = 'educationHistory'
+        entries = educationHistory
+        setter = setEducationHistory
       } else {
-        entries = 'careerHistory'
+        entries = careerHistory
+        setter = setCareerHistory
       }
-      this.setState({
-        [entries]: this.state[entries].map(entry => {
-          return(
-            entry.id === id ? {...entry, [name]: value} : entry
-          )
-        })
-      })
+      setter(entries.map(entry => {
+            return(
+              entry.id === id ? {...entry, [name]: value} : entry
+            )
+        }))
     }
   }
 
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     const {name, id} = e.target;
     if(name === 'info'){
-      this.setState({
-        [name]: {
-          ...this.state[name],
-          editable: !this.state[name].editable
-        }
-      })
-    } else {
-      this.setState(prevState => {
-        return({
-          [name]: this.state[name].map(entry => {
-            return(
-              entry.id === id ? {...entry, editable: !entry.editable} : entry
-            )
-          })
-        })
+      setInfo({...info, editable: !info.editable})
+    } else if(name === 'educationHistory'){
+      setEducationHistory(educationHistory.map(entry => {
+        return(
+          entry.id === id ? {...entry, editable: !entry.editable} : entry
+        )
+      }))
+    } else if(name === 'careerHistory') {
+      setCareerHistory(careerHistory.map(entry => {
+        return(
+          entry.id === id ? {...entry, editable: !entry.editable} : entry
+        )
+      }))
+    }
+  }
+
+
+  const handleAdd = (e) => {
+    const {name} = e.target;
+    if (name === "career")  {
+          setCareerHistory(careerHistory.concat(career));
+          setCareer({
+              editable: true,
+              company: '',
+              jobTitle: '',
+              description: '',
+              startDate: '',
+              endDate: '',
+              id: uniqid()
+            }
+          )}
+    else {
+      setEducationHistory(educationHistory.concat(education));
+      setEducation({
+        editable: true,
+        school: '',
+        degree: '',
+        startDate: '',
+        endDate: '',
+        id: uniqid()
       })
     }
   }
 
-  handleAdd = (e) => {
-    const {name} = e.target;
-    const {career, careerHistory, education, educationHistory} = this.state;
-    name === "career" ?
-      this.setState({
-          careerHistory: careerHistory.concat(career),
-          career: {
-            editable: true,
-            company: '',
-            jobTitle: '',
-            description: '',
-            startDate: '',
-            endDate: '',
-            id: uniqid()
-          }
-        }) :
-      this.setState({
-          educationHistory: educationHistory.concat(education),
-          education: {
-            editable: true,
-            school: '',
-            degree: '',
-            startDate: '',
-            endDate: '',
-            id: uniqid()
-          }
-        })
-  }
-
-  handleDelete = (e) => {
+  const handleDelete = (e) => {
     const {name, id} = e.target;
-    const {educationHistory, careerHistory} = this.state;
       name === 'educationHistory' ?
-      this.setState({
-        educationHistory: educationHistory.filter(entry => entry.id !== id)
-      }) :
-      this.setState({
-        careerHistory: careerHistory.filter(entry => entry.id !== id)
-      })
+        setEducationHistory(educationHistory.filter(entry => entry.id !== id)) :
+        setCareerHistory(careerHistory.filter(entry => entry.id !== id))
   }
 
-  render() {
     return (
       <div className="App">
           <Header />
           <div className="main">
           <Info
-            {...this.state.info}
-            handleSubmit={this.handleSubmit}
-            handleChange={this.handleChange}
+            {...info}
+            handleSubmit={handleSubmit}
+            handleChange={handleChange}
           />
           <Education
-            {...this.state.education}
-            educationHistory={this.state.educationHistory}
-            handleAdd={this.handleAdd}
-            handleDelete={this.handleDelete}
-            handleSubmit={this.handleSubmit}
-            handleChange={this.handleChange}
+            {...education}
+            educationHistory={educationHistory}
+            handleAdd={ handleAdd}
+            handleDelete={handleDelete}
+            handleSubmit={handleSubmit}
+            handleChange={handleChange}
           />
           <Career
-            {...this.state.career}
-            careerHistory={this.state.careerHistory}
-            handleAdd={this.handleAdd}
-            handleDelete={this.handleDelete}
-            handleSubmit={this.handleSubmit}
-            handleChange={this.handleChange}
+            {...career}
+            careerHistory={careerHistory}
+            handleAdd={ handleAdd}
+            handleDelete={handleDelete}
+            handleSubmit={handleSubmit}
+            handleChange={handleChange}
           />
         </div>
       </div>
     );
-  }
 }
 
 export default App;
